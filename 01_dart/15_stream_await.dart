@@ -1,4 +1,3 @@
-void main() {}
 void main() {
   emitNumbers().listen((value) {
     print(value);
