@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class MyMessageBubble extends StatelessWidget {
   const MyMessageBubble({super.key});
 
+  
+
   @override
   Widget build(BuildContext context) {
+
+  DateTime now = DateTime.now();
+  String formattedDate = DateFormat('kk:mm:ss').format(now);
+  
+
+
+
     return  Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
@@ -25,7 +35,7 @@ class MyMessageBubble extends StatelessWidget {
           ),
         ),
          Text(
-          DateTime.now().toString(),
+          formattedDate,
           style: const TextStyle(color: Colors.grey),
         ),
 

@@ -1,11 +1,14 @@
-
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ResponseMessageBubble extends StatelessWidget {
   const ResponseMessageBubble({super.key});
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+    String formattedDate = DateFormat('kk:mm:ss').format(now);
+
     final colors = Theme.of(context).colorScheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,7 +30,7 @@ class ResponseMessageBubble extends StatelessWidget {
           ),
         ),
         Text(
-          DateTime.now().toString(),
+          formattedDate,
           style: const TextStyle(color: Colors.grey),
         ),
 
@@ -47,8 +50,10 @@ class _ImageBubble extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20.0),
       child: Image.network(
-          'https://yesno.wtf/assets/yes/11-a23cbde4ae018bbda812d2d8b2b8fc6c.gif', width: size.width * 0.5, height: 150, fit: BoxFit.cover),
-          
+          'https://yesno.wtf/assets/yes/11-a23cbde4ae018bbda812d2d8b2b8fc6c.gif',
+          width: size.width * 0.5,
+          height: 150,
+          fit: BoxFit.cover),
     );
   }
 }
