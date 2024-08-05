@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
+
 import "package:yes_no_app/presentation/widgets/chat/my_message_bubble.dart";
 import "package:yes_no_app/presentation/widgets/chat/response_message.dart";
+import "package:yes_no_app/presentation/widgets/sharedWidgets/message_field_box.dart";
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -26,7 +28,8 @@ class ChatScreen extends StatelessWidget {
   }
 
   void onPressed() {
-    print(' onPressed \n');
+   
+    
   }
 }
 
@@ -48,7 +51,7 @@ class _ChatView extends StatelessWidget {
                 : const ResponseMessageBubble();
           },
         )),
-        const Text('  MUNDO ')
+        const MessageFieldBox(),
       ])),
     );
   }
