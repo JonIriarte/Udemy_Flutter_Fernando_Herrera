@@ -24,9 +24,9 @@ class MyMessageBubble extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
         ),
-        const Text(
-          '10:00',
-          style: TextStyle(color: Colors.grey),
+         Text(
+          DateTime.now().toString(),
+          style: const TextStyle(color: Colors.grey),
         ),
 
         const SizedBox(height: 10.0),
