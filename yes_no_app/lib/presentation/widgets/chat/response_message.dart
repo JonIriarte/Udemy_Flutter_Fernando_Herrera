@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 
 class ResponseMessageBubble extends StatelessWidget {
@@ -48,12 +49,29 @@ class _ImageBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
-      child: Image.network(
+        borderRadius: BorderRadius.circular(20.0),
+        child: Image.network(
           'https://yesno.wtf/assets/yes/11-a23cbde4ae018bbda812d2d8b2b8fc6c.gif',
           width: size.width * 0.5,
           height: 150,
-          fit: BoxFit.cover),
-    );
+          fit: BoxFit.cover,
+          loadingBuilder: (context, child, loadingProgress) {
+            // if (loadingProgress == null) return child;
+            return Container(
+              width: size.width * 0.5,
+              height: 150,
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              decoration: BoxDecoration(
+                color: Colors.blueGrey[100],
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+                child: const Center(
+                child: Text(
+                  'Enviando imagen...',
+                ),
+                ),
+            );
+          },
+        ));
   }
 }
