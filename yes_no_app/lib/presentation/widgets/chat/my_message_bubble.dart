@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:yes_no_app/domain/entities/message.dart';
+
 
 class MyMessageBubble extends StatelessWidget {
-  const MyMessageBubble({super.key});
+  const MyMessageBubble({super.key, required this.message});
 
   
+  final Message message;
+ 
 
   @override
   Widget build(BuildContext context) {
-
-  DateTime now = DateTime.now();
-  String formattedDate = DateFormat('kk:mm:ss').format(now);
-  
-
 
 
     return  Column(
@@ -29,17 +27,17 @@ class MyMessageBubble extends StatelessWidget {
               bottomRight: Radius.circular(20.0),
             ),
           ),
-          child: const Text(
-            'Hola, ¿cómo estás?',
-            style: TextStyle(color: Colors.white),
+          child: Text(
+            message.text,
+            style: const TextStyle(color: Colors.white),
           ),
         ),
          Text(
-          formattedDate,
+           message.messageTime,
           style: const TextStyle(color: Colors.grey),
         ),
 
-        const SizedBox(height: 10.0),
+        const SizedBox(height: 7.0),
       ],
     );
   }

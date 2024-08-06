@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-
-import 'package:intl/intl.dart';
+import 'package:yes_no_app/domain/entities/message.dart';
 
 class ResponseMessageBubble extends StatelessWidget {
-  const ResponseMessageBubble({super.key});
+  const ResponseMessageBubble({super.key, required this.message});
+
+  final Message message;
 
   @override
   Widget build(BuildContext context) {
-    DateTime now = DateTime.now();
-    String formattedDate = DateFormat('kk:mm:ss').format(now);
-
     final colors = Theme.of(context).colorScheme;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -25,33 +24,34 @@ class ResponseMessageBubble extends StatelessWidget {
               bottomRight: Radius.circular(20.0),
             ),
           ),
-          child: const Text(
-            'Respondo a tu pregunta',
-            style: TextStyle(color: Colors.white),
+          child: Text(
+            message.text,
+            style: const TextStyle(color: Colors.white),
           ),
         ),
         Text(
-          formattedDate,
+          message.messageTime,
           style: const TextStyle(color: Colors.grey),
         ),
-
         const SizedBox(height: 5.0),
-        //Todo: image
-        _ImageBubble(),
-        const SizedBox(height: 10.0),
+        _ImageBubble(imageUrl: message.imageUrl ?? ''),
+        const SizedBox(height: 7.0),
       ],
     );
   }
 }
 
 class _ImageBubble extends StatelessWidget {
+  final String imageUrl;
+  const _ImageBubble({required this.imageUrl});
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return ClipRRect(
         borderRadius: BorderRadius.circular(20.0),
         child: Image.network(
-          'https://yesno.wtf/assets/yes/11-a23cbde4ae018bbda812d2d8b2b8fc6c.gif',
+          imageUrl,
           width: size.width * 0.5,
           height: 150,
           fit: BoxFit.cover,
@@ -65,11 +65,11 @@ class _ImageBubble extends StatelessWidget {
                 color: Colors.blueGrey[100],
                 borderRadius: BorderRadius.circular(20.0),
               ),
-                child: const Center(
+              child: const Center(
                 child: Text(
                   'Enviando imagen...',
                 ),
-                ),
+              ),
             );
           },
         ));
