@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:toktik/config/helpers/human_formats.dart';
 import 'package:toktik/domain/entities/video_post.dart';
@@ -22,7 +23,10 @@ class VideoButtons extends StatelessWidget {
       const SizedBox(
         height: 15,
       ),
-      const _CustomIconButton(value: 0, icon: Icons.play_circle_outline)
+      SpinPerfect(
+          duration: const Duration(seconds: 3),
+          child: const _CustomIconButton(
+              value: 0, icon: Icons.play_circle_outline))
     ]);
   }
 }

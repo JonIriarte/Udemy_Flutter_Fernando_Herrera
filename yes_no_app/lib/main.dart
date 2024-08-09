@@ -25,7 +25,5 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  void onPressed() {
-    print(' onPressed \n');
-  }
+  void onPressed() {}
 }
