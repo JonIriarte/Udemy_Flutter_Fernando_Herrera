@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		YvRlXHD3PcrPYRRb8/Ip3BSY/tk=
+		s4NVkwlAXkQ3c/revWtTuu/ksJY=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		r1BVodM+E++PJl2ZQJjjl2e86/s=
+		ZQwCN20I6atGlEcp1F6YzcFcxHo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		gYlMRcQV/H5XLNWqrn/KgSPrQSw=
+		ZBSi6UdmDijYiCERDMnI9D53jGI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/videos/1.mp4</key>
 		<data>
@@ -110,11 +110,11 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/isolate_snapshot_data</key>
 		<data>
-		NOOuIrmqIJHAECyJhxYTSwmeSfs=
+		wfMZXW4WDbU/feCTp08dh+q7SKY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		C6ON88H0khiuQ6yrP284jsdixUI=
+		wLb3fzAeKzyiuQ8iQKZCzlBb1Us=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -122,15 +122,15 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
-		p79zzJ85/yOQo5OGiBW5XF0+CxY=
+		VoVnsu58hN7wrwazX0nyAopiB0Q=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/vm_snapshot_data</key>
 		<data>
-		5pZuXudFN+/X6GBnZRBE8DbuhuQ=
+		ituzZzkouVPX475mGIvTzzeOnk8=
 		</data>
 		<key>Frameworks/Flutter.framework/Flutter</key>
 		<data>
-		d3/1/UETZElXJZEBOM97O/EtisE=
+		GmnncdikJ1gzYawR0YQyr/CF/oE=
 		</data>
 		<key>Frameworks/Flutter.framework/Headers/Flutter.h</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>Frameworks/Flutter.framework/Headers/FlutterDartProject.h</key>
 		<data>
-		1Ii7W6lYWZUeB6C6rtn269jAxgA=
+		SpNs7IhIC7xP34Ej+LQCaEZkqik=
 		</data>
 		<key>Frameworks/Flutter.framework/Headers/FlutterEngine.h</key>
 		<data>
@@ -190,7 +190,7 @@
 		</data>
 		<key>Frameworks/Flutter.framework/Headers/FlutterTexture.h</key>
 		<data>
-		7nFruy6bmD9XHvbzEwfdTXE4Rkk=
+		31prWLso2k5PfMMSbf5hGl+VE6Y=
 		</data>
 		<key>Frameworks/Flutter.framework/Headers/FlutterViewController.h</key>
 		<data>
@@ -198,7 +198,7 @@
 		</data>
 		<key>Frameworks/Flutter.framework/Info.plist</key>
 		<data>
-		hO7esCpwQ0zw9ekCcUqTKE/+TqU=
+		jYrGmuZSeA7zgoZSGKtq9oc8nAU=
 		</data>
 		<key>Frameworks/Flutter.framework/Modules/module.modulemap</key>
 		<data>
@@ -210,11 +210,31 @@
 		</data>
 		<key>Frameworks/Flutter.framework/_CodeSignature/CodeResources</key>
 		<data>
-		fiW68WQ3jHf2zISXOkwT+kd9bFg=
+		KnI2YUNNJtYOxovuurMN5lCoCmY=
 		</data>
 		<key>Frameworks/Flutter.framework/icudtl.dat</key>
 		<data>
-		Ubat0LvE4LUgCwHeyl0Anx2vnzk=
+		ipm8hg7aB3LzsfShJfpNR0QQ4hw=
+		</data>
+		<key>Frameworks/video_player_avfoundation.framework/Info.plist</key>
+		<data>
+		7xEr5wgFhDG0PAGA0h++qWLS43Q=
+		</data>
+		<key>Frameworks/video_player_avfoundation.framework/_CodeSignature/CodeResources</key>
+		<data>
+		8TmQVAn9CEaPkq3WZDxfWi1xVTw=
+		</data>
+		<key>Frameworks/video_player_avfoundation.framework/video_player_avfoundation</key>
+		<data>
+		wu+BQtsv+EixV5arzFG75K1KCn4=
+		</data>
+		<key>Frameworks/video_player_avfoundation.framework/video_player_avfoundation_privacy.bundle/Info.plist</key>
+		<data>
+		p+OZfeOJGE/bwOyC9qgWheyyMHw=
+		</data>
+		<key>Frameworks/video_player_avfoundation.framework/video_player_avfoundation_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<data>
+		/LX0ZlwxwIAIhjZaDB8EiH5KpXA=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -301,7 +321,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			v2df5wniWiwfUuiDbtz/yf9dBXWh04dZJzt55Ur1ED4=
+			Xh84YMvdtLY5TWsPUYxa70nmL8gJ+s6J8louSFKQbG4=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -315,7 +335,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			F290Pziq64rJnP+zwS7Rk4tpEaV90quvHTw6nsngeY8=
+			1aX0gOdzqYatS2FchDEQP4gdogZUvJAzrVP96ne3IaU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -343,7 +363,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7U5pMpap+kMI3Xn1pvC8Vbmvdvq0ZPgFum9LgnqP/Bo=
+			D0qnSWltvwtgb1i3mEHTuzwnr2gyPRaQyH7p/GK64yw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/videos/1.mp4</key>
@@ -413,14 +433,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZXgx8A4Zzj2le7NQFnsz1lOzJ640XPWxEuPwtsgqWWk=
+			y3IETU0f7aPVGlpyw59O5lGbzyZ9Ro7gfazfyi9v0bU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			X+EEG9HdhrLCLjF3HCPDiCD4EOCa709npRn4mHA+6uw=
+			E4CACyOHXOjL+zg/kiT78Lz16BOGu7vcoKbtmpieE7o=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -434,21 +454,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ggsttSoN6c2kH04/7vNnFwBQTTy8j9ILVF4lU1822Bk=
+			4PC1vOWKHlNOnW4dGwFfD4TPwBCllniPCsOy7+1X5co=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/vm_snapshot_data</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OKT7zSYjvmy6bkUt/xrnwXxv1rygk4kGDCZd1F+nKug=
+			L8Ll/5LQYd/uiFbt7jD8B17se0Auql4jpiImNFSyl6A=
 			</data>
 		</dict>
 		<key>Frameworks/Flutter.framework/Flutter</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WMhBozlPizPHDAVxVRpAHy7XBzyFXf61a+JMiQH+vH0=
+			6x8yjDvCoThTUxMieTIPTEdXeC84ayOvDH3FJmNCZFQ=
 			</data>
 		</dict>
 		<key>Frameworks/Flutter.framework/Headers/Flutter.h</key>
@@ -497,7 +517,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y5PEW7Tws4XpVmn15X/fdaU0d76hSeF803JlgrI20qE=
+			U8q/0Ibt9q4O2HMsCdUwITtJdTx8Ljhlx+0aY83fH6s=
 			</data>
 		</dict>
 		<key>Frameworks/Flutter.framework/Headers/FlutterEngine.h</key>
@@ -553,7 +573,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4kb25KahvBulQiElAYv/ZSbdkhkb5F/AKRZv4IjLsOw=
+			JcpN4a9sv6xynlD3Ri611N5y+HoupUWp2hyrIXB/I8Y=
 			</data>
 		</dict>
 		<key>Frameworks/Flutter.framework/Headers/FlutterViewController.h</key>
@@ -567,7 +587,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Jn45DxI4uh5uHYxjRZ4JQ8TRsPI6mLL2gQhVZI9wuGo=
+			A63mNUFEqSiSpzi4wKBgjKC4oYP4eX1Lb1sber9wjaE=
 			</data>
 		</dict>
 		<key>Frameworks/Flutter.framework/Modules/module.modulemap</key>
@@ -588,14 +608,49 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HGBT2pDBy3HcUyHcDCdhQIPDwzrESFswlL0qDxwGCnQ=
+			Bx+JB/axp7HtBtLEanD0PVm9uQZo59N4v4B+LSgdkfQ=
 			</data>
 		</dict>
 		<key>Frameworks/Flutter.framework/icudtl.dat</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZepykIMSjfzhwAcmupMrkaqvXkhza1ZE3TdHjl8odaw=
+			wSU3Ai74GJkae/7UGnbY1q6WL/vA5lEax2Kl0IRef3w=
+			</data>
+		</dict>
+		<key>Frameworks/video_player_avfoundation.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ox+JS/cnXRXOJkZvLE+7wXVqCfrqQcahFCN/KmuNPvM=
+			</data>
+		</dict>
+		<key>Frameworks/video_player_avfoundation.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8V2rOvnZ+BUJYiPT50YwB/m1iGVXBbwkd98KIfllxsE=
+			</data>
+		</dict>
+		<key>Frameworks/video_player_avfoundation.framework/video_player_avfoundation</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zOW6gHiyCmgyrT984XVFeKFCnsJqfP+FaXKk8Rr37lQ=
+			</data>
+		</dict>
+		<key>Frameworks/video_player_avfoundation.framework/video_player_avfoundation_privacy.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UUvVqRFyXAesFrucJV2yJPnLx/AdJ9EdGrKtAIzeRFA=
+			</data>
+		</dict>
+		<key>Frameworks/video_player_avfoundation.framework/video_player_avfoundation_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bS2g2NkwIn1CjB2TY7CtbjoS4sm2jFzilxWKdBL8jDE=
 			</data>
 		</dict>
 	</dict>
