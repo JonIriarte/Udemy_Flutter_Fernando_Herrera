@@ -12,7 +12,7 @@ class DiscoverScreen extends StatelessWidget {
 
     return  Scaffold(
       body: discoverProvider.initialLoading
-          ? const Center(child: CircularProgressIndicator( backgroundColor: Colors.amber,))
+          ? const Center(child: CircularProgressIndicator( backgroundColor: Colors.amber,strokeWidth: 2,))
           : VideoScrollableView(videos:discoverProvider.videos),
     );
   }
