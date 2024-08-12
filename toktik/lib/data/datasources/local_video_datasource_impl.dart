@@ -1,0 +1,23 @@
+import 'package:toktik/data/models/local_video_model.dart';
+import 'package:toktik/domain/datasources/video_posts_datasource.dart';
+import 'package:toktik/domain/entities/video_post.dart';
+import 'package:toktik/shared/data/local_video_post.dart';
+
+class LocalVideoDatasource implements VideoPostsDatasource {
+  @override
+  Future<List<VideoPost>> getFavouriteVideoPostsByUserId(String userId) {
+    // TODO: implement getFavouriteVideoPostsByUserId
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<VideoPost>> getVideoPostsByPage(int page) async {
+    await Future.delayed(const Duration(seconds: 2));
+
+    final List<VideoPost> newVideos = videoPosts
+        .map((video) => LocalVideoModel.fromJsonMap(video).toVideoPostEntity())
+        .toList();
+
+        return newVideos;
+  }
+}
