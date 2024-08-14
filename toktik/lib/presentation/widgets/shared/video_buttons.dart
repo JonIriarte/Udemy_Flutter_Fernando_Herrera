@@ -51,6 +51,6 @@ class _CustomIconButton extends StatelessWidget {
   }
 
   void onPressedLike() {
-    print('Like button pressed');
+    
   }
 }

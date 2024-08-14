@@ -6,7 +6,6 @@ import 'package:toktik/shared/data/local_video_post.dart';
 class LocalVideoDatasourceImpl implements VideoPostsDatasource {
   @override
   Future<List<VideoPost>> getFavouriteVideoPostsByUserId(String userId) {
-    // TODO: implement getFavouriteVideoPostsByUserId
     throw UnimplementedError();
   }
 
@@ -18,6 +17,6 @@ class LocalVideoDatasourceImpl implements VideoPostsDatasource {
         .map((video) => LocalVideoModel.fromJsonMap(video).toVideoPostEntity())
         .toList();
 
-        return newVideos;
+    return newVideos;
   }
 }
