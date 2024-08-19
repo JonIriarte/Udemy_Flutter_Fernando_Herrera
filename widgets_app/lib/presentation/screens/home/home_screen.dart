@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -40,8 +41,7 @@ class _CustomListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors =
-        Theme.of(context).colorScheme; // Define the 'context' variable here
+    final colors = Theme.of(context).colorScheme;
     return ListTile(
       leading: Icon(
         menuItem.iconData,
@@ -54,7 +54,7 @@ class _CustomListTile extends StatelessWidget {
       ),
       subtitle: Text(menuItem.subtitle),
       onTap: () {
-//TOºDO: Navigate to the selected screen
+        context.go(menuItem.link);
       },
     );
   }
