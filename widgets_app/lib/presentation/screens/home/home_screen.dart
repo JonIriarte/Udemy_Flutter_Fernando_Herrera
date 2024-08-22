@@ -4,7 +4,7 @@ import 'package:widgets_app/config/menu/menu_items.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
+  static const String routeName = '/';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +42,7 @@ class _CustomListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
+
     return ListTile(
       leading: Icon(
         menuItem.iconData,
