@@ -5,7 +5,7 @@ import 'package:widgets_app/presentation/screens/home/home_screen.dart';
 class ButtonsScreen extends StatelessWidget {
   const ButtonsScreen({super.key});
 
-  static const String routeName = 'buttons';
+  static const String routeName = 'buttons_screen';
 
   @override
   Widget build(BuildContext context) {
