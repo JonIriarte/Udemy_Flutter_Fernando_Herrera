@@ -24,4 +24,9 @@ final appMenuItems = <MenuItem>[
       subtitle: 'Un contenedor estilizado',
       iconData: Icons.credit_card,
       link: '/cards'),
+  const MenuItem(
+      title: 'Tutorial',
+      subtitle: 'Tutorial introductiorio',
+      iconData: Icons.accessibility_new_rounded,
+      link: '/app_tutorial_screen'),
 ];
