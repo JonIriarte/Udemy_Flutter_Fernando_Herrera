@@ -1,3 +1,5 @@
+import 'package:animate_do/animate_do.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -32,15 +34,19 @@ class AppTutorialScreen extends StatefulWidget {
 }
 
 class _AppTutorialScreenState extends State<AppTutorialScreen> {
-  final PageController pageViewController = PageController();
+  final PageController _pageViewController = PageController();
 
+  int page = 0;
   bool endReached = false;
 
   @override
   void initState() {
     super.initState();
-    pageViewController.addListener(() {
-      final page = pageViewController.page ?? 0;
+    _pageViewController.addListener(() {
+      setState(() {
+        page = _pageViewController.page?.toInt() ?? 0;
+      });
+
       if (!endReached && (page >= (slides.length - 1.5))) {
         setState(() {
           endReached = true;
@@ -50,13 +56,20 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
   }
 
   @override
+  void dispose() {
+    _pageViewController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+      final colors = Theme.of(context).colorScheme;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
-        children: [
+        children: <Widget>[
           PageView(
-            controller: pageViewController,
+            controller: _pageViewController,
             physics: const BouncingScrollPhysics(),
             children: slides
                 .map((slideData) => _Slide(
@@ -72,20 +85,37 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
                 onPressed: () => GoRouter.of(context).go(HomeScreen.routeName),
                 child: const Text('Salir')),
           ),
+          Positioned(
+            bottom: 55,
+            left: 0,
+            right: 0,
+            child: DotsIndicator(
+              dotsCount: slides.length,
+              position: page,
+              decorator: DotsDecorator(
+                color: Colors.lightGreen,
+                activeColor: colors.primary
+              ),
+            ),
+          ),
           endReached
               ? Positioned(
                   bottom: 30,
                   right: 30,
-                  child: FilledButton(
-                      onPressed: () {
-                        pageViewController.animateToPage(
-                          pageViewController.initialPage,
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeInOut,
-                        );
-                      },
-                      child: const Text('Empezar')))
-              : const SizedBox()
+                  child: FadeInRight(
+                    from: 15,
+                    delay: const Duration(seconds: 1),
+                    child: FilledButton(
+                        onPressed: () {
+                          _pageViewController.animateToPage(
+                            _pageViewController.initialPage,
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          );
+                        },
+                        child: const Text('Empezar')),
+                  ))
+              : const SizedBox(),
         ],
       ),
     );
