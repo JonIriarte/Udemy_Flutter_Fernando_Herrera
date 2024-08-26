@@ -4,6 +4,7 @@ import 'package:widgets_app/presentation/screens/app_tutorial/app_tutorial_scree
 import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
 import 'package:widgets_app/presentation/screens/buttons/cards_screen.dart';
 import 'package:widgets_app/presentation/screens/home/home_screen.dart';
+import 'package:widgets_app/presentation/screens/progress/progress_screen.dart';
 
 final GoRouter appRouter = GoRouter(initialLocation: '/', routes: <RouteBase>[
   GoRoute(
@@ -12,7 +13,7 @@ final GoRouter appRouter = GoRouter(initialLocation: '/', routes: <RouteBase>[
       pageBuilder: (BuildContext context, GoRouterState state) =>
           MaterialPage(key: state.pageKey, child: const HomeScreen())),
   GoRoute(
-    path: '/cards',
+    path: '/cards_screen',
     name: CardsScreen.routeName,
     pageBuilder: (context, state) => MaterialPage(
       key: state.pageKey,
@@ -20,7 +21,7 @@ final GoRouter appRouter = GoRouter(initialLocation: '/', routes: <RouteBase>[
     ),
   ),
   GoRoute(
-    path: '/buttons',
+    path: '/buttons_screen',
     name: ButtonsScreen.routeName,
     pageBuilder: (context, state) => MaterialPage(
       key: state.pageKey,
@@ -32,5 +33,11 @@ final GoRouter appRouter = GoRouter(initialLocation: '/', routes: <RouteBase>[
     name: AppTutorialScreen.routeName,
     pageBuilder: (context, state) =>
         MaterialPage(key: state.pageKey, child: const AppTutorialScreen()),
+  ), 
+   GoRoute(
+    path: '/progress_screen',
+    name: ProgressScreen.routeName,
+    pageBuilder: (context, state) =>
+        MaterialPage(key: state.pageKey, child: const ProgressScreen()),
   )
 ]);
