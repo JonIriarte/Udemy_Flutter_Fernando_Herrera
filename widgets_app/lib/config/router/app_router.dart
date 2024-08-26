@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:widgets_app/presentation/screens/app_tutorial/app_tutorial_screen.dart';
-import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
-import 'package:widgets_app/presentation/screens/buttons/cards_screen.dart';
-import 'package:widgets_app/presentation/screens/home/home_screen.dart';
-import 'package:widgets_app/presentation/screens/progress/progress_screen.dart';
-import 'package:widgets_app/presentation/screens/snackbar/snackbar_screen.dart';
+import 'package:widgets_app/presentation/screens/screens.dart';
 
 final GoRouter appRouter = GoRouter(initialLocation: '/', routes: <RouteBase>[
   GoRoute(
@@ -46,5 +41,11 @@ final GoRouter appRouter = GoRouter(initialLocation: '/', routes: <RouteBase>[
     name: SnackbarScreen.routeName,
     pageBuilder: (context, state) =>
         MaterialPage(key: state.pageKey, child: const SnackbarScreen()),
+  ),
+  GoRoute(
+    path: '/animated_screen',
+    name: AnimatedScreen.routeName,
+    pageBuilder: (context, state) =>
+        MaterialPage(key: state.pageKey, child: const AnimatedScreen()),
   )
 ]);
