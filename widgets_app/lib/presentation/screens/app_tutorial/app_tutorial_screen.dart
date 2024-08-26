@@ -2,7 +2,6 @@ import 'package:animate_do/animate_do.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
 import 'package:widgets_app/presentation/screens/home/home_screen.dart';
 
 class SlideInfo {
@@ -34,8 +33,7 @@ class AppTutorialScreen extends StatefulWidget {
 }
 
 class _AppTutorialScreenState extends State<AppTutorialScreen> {
-  final PageController _pageViewController = PageController();
-
+  final PageController _pageViewController = PageController(initialPage: 0);
   int page = 0;
   bool endReached = false;
 
@@ -63,7 +61,7 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
 
   @override
   Widget build(BuildContext context) {
-      final colors = Theme.of(context).colorScheme;
+    final colors = Theme.of(context).colorScheme;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -93,9 +91,7 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
               dotsCount: slides.length,
               position: page,
               decorator: DotsDecorator(
-                color: Colors.lightGreen,
-                activeColor: colors.primary
-              ),
+                  color: Colors.lightGreen, activeColor: colors.primary),
             ),
           ),
           endReached
