@@ -5,6 +5,7 @@ import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
 import 'package:widgets_app/presentation/screens/buttons/cards_screen.dart';
 import 'package:widgets_app/presentation/screens/home/home_screen.dart';
 import 'package:widgets_app/presentation/screens/progress/progress_screen.dart';
+import 'package:widgets_app/presentation/screens/snackbar/snackbar_screen.dart';
 
 final GoRouter appRouter = GoRouter(initialLocation: '/', routes: <RouteBase>[
   GoRoute(
@@ -33,11 +34,17 @@ final GoRouter appRouter = GoRouter(initialLocation: '/', routes: <RouteBase>[
     name: AppTutorialScreen.routeName,
     pageBuilder: (context, state) =>
         MaterialPage(key: state.pageKey, child: const AppTutorialScreen()),
-  ), 
-   GoRoute(
+  ),
+  GoRoute(
     path: '/progress_screen',
     name: ProgressScreen.routeName,
     pageBuilder: (context, state) =>
         MaterialPage(key: state.pageKey, child: const ProgressScreen()),
+  ),
+  GoRoute(
+    path: '/snackbar_screen',
+    name: SnackbarScreen.routeName,
+    pageBuilder: (context, state) =>
+        MaterialPage(key: state.pageKey, child: const SnackbarScreen()),
   )
 ]);
