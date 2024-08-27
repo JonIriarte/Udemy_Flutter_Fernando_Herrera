@@ -22,9 +22,7 @@ class UIControlsScreen extends StatelessWidget {
 }
 
 class _UIControlsView extends StatefulWidget {
-  const _UIControlsView({
-    super.key,
-  });
+  const _UIControlsView();
 
   @override
   State<_UIControlsView> createState() => _UIControlsViewState();
@@ -114,7 +112,7 @@ class _UIControlsViewState extends State<_UIControlsView> {
           ],
         ),
         CheckboxListTile(
-            title: Text('Breakfast?'),
+            title: const Text('Breakfast?'),
             value: wantsBreakFast,
             onChanged: (value) {
               setState(() {
@@ -122,7 +120,7 @@ class _UIControlsViewState extends State<_UIControlsView> {
               });
             }),
         CheckboxListTile(
-            title: Text('Comida?'),
+            title: const Text('Comida?'),
             value: wantsLunch,
             onChanged: (value) {
               setState(() {
@@ -130,7 +128,7 @@ class _UIControlsViewState extends State<_UIControlsView> {
               });
             }),
         CheckboxListTile(
-            title: Text('Cena?'),
+            title: const Text('Cena?'),
             value: wantsDinner,
             onChanged: (value) {
               setState(() {
