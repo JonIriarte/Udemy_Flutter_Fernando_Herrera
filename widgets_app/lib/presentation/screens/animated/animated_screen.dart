@@ -45,12 +45,13 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
         body: Center(
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 350),
-            curve: Curves.bounceIn,
-            height: height,
-            width: width,
+            curve: Curves.elasticOut,
+            height: height <= 0 ? 0 : height,
+            width: width <= 0 ? 0 : width,
             decoration: BoxDecoration(
                 color: color,
-                borderRadius: BorderRadius.circular(borderRadius)),
+                borderRadius:
+                    BorderRadius.circular(borderRadius < 0 ? 0 : borderRadius)),
           ),
         ),
         floatingActionButton: FloatingActionButton(
