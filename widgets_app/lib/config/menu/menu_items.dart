@@ -48,5 +48,10 @@ final appMenuItems = <MenuItem>[
       title: 'UI Controls screen',
       subtitle: 'Lorem ipsum page',
       iconData: Icons.supervised_user_circle,
-      link: '/ui_controls_screen')
+      link: '/ui_controls_screen'),
+  const MenuItem(
+      title: 'Infinite scroll screen',
+      subtitle: 'Lorem ipsum page',
+      iconData: Icons.list_alt_rounded,
+      link: '/infinite_scroll_screen')
 ];

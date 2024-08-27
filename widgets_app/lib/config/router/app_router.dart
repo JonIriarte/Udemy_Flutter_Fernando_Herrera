@@ -53,5 +53,13 @@ final GoRouter appRouter = GoRouter(initialLocation: '/', routes: <RouteBase>[
     name: UIControlsScreen.routeName,
     pageBuilder: (context, state) =>
         MaterialPage(key: state.pageKey, child: const UIControlsScreen()),
+  ), 
+  GoRoute(
+    path: '/infinite_scroll_screen',
+    name: InfiniteScrollScreen.routeName,
+    pageBuilder: (context, state) =>
+        MaterialPage(key: state.pageKey, child: const InfiniteScrollScreen()),
   )
 ]);
+
+
