@@ -47,5 +47,11 @@ final GoRouter appRouter = GoRouter(initialLocation: '/', routes: <RouteBase>[
     name: AnimatedScreen.routeName,
     pageBuilder: (context, state) =>
         MaterialPage(key: state.pageKey, child: const AnimatedScreen()),
+  ), 
+  GoRoute(
+    path: '/ui_controls_screen',
+    name: UIControlsScreen.routeName,
+    pageBuilder: (context, state) =>
+        MaterialPage(key: state.pageKey, child: const UIControlsScreen()),
   )
 ]);

@@ -38,10 +38,15 @@ final appMenuItems = <MenuItem>[
       title: 'SnackBar',
       subtitle: 'SnackBar page',
       iconData: Icons.message,
-      link: '/snackbar_screen'), 
-      const MenuItem(
+      link: '/snackbar_screen'),
+  const MenuItem(
       title: 'Animated Container',
       subtitle: 'Lorem ipsum page',
       iconData: Icons.check_box_outline_blank_rounded,
-      link: '/animated_screen')
+      link: '/animated_screen'),
+  const MenuItem(
+      title: 'UI Controls screen',
+      subtitle: 'Lorem ipsum page',
+      iconData: Icons.supervised_user_circle,
+      link: '/ui_controls_screen')
 ];
