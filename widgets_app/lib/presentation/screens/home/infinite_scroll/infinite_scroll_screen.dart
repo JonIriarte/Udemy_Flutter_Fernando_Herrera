@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../screens.dart';
 
 class InfiniteScrollScreen extends StatefulWidget {
@@ -13,7 +12,50 @@ class InfiniteScrollScreen extends StatefulWidget {
 }
 
 class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
-  List<int> imageIds = [1, 2, 3, 4, 56, 888];
+  List<int> imageIds = [1, 2, 3, 4, 5, 900];
+  final ScrollController scrollController = ScrollController();
+  bool isLoading = false;
+
+  void addImages() {
+    final lastId = imageIds.last;
+    imageIds.addAll([1, 2, 3, 4, 5].map((e) => lastId + e));
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    scrollController.addListener(() {
+      if (scrollController.position.pixels + 500 >=
+          scrollController.position.maxScrollExtent) {
+        loadNextPage();
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
+  }
+
+  Future loadNextPage() async {
+    if (isLoading) return;
+
+    setState(() {
+      isLoading = true;
+    });
+
+    await Future.delayed(const Duration(seconds: 2));
+
+    addImages();
+    if (!mounted) return;
+
+    setState(() {
+      isLoading = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,15 +69,17 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
         removeTop: true,
         removeBottom: true,
         child: ListView.builder(
+          controller: scrollController,
           itemCount: imageIds.length,
           itemBuilder: (context, index) {
             return FadeInImage(
-                fit: BoxFit.cover,
-                width: double.infinity,
-                height: 300,
-                placeholder: const AssetImage('assets/images/loading_cat.gif'),
-                image: NetworkImage(
-                    'https://picsum.photos/id/${imageIds[index] - 1}/500/300'));
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: 300,
+              placeholder: const AssetImage('assets/images/loading_cat.gif'),
+              image: NetworkImage(
+                  'https://picsum.photos/id/${imageIds[index]}/500/300'),
+            );
           },
         ),
       ),
