@@ -55,6 +55,16 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
     setState(() {
       isLoading = false;
     });
+    moveScrollToBottom();
+  }
+
+  void moveScrollToBottom() {
+    if (scrollController.position.pixels + 150 <=
+        scrollController.position.maxScrollExtent) return;
+
+    scrollController.animateTo(scrollController.position.pixels + 110,
+        duration: const Duration(microseconds: 300),
+        curve: Curves.fastOutSlowIn);
   }
 
   Future<void> onRefresh() async {
