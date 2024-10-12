@@ -59,6 +59,18 @@ final GoRouter appRouter = GoRouter(initialLocation: '/', routes: <RouteBase>[
     name: InfiniteScrollScreen.routeName,
     pageBuilder: (context, state) =>
         MaterialPage(key: state.pageKey, child: const InfiniteScrollScreen()),
+  ), 
+   GoRoute(
+    path: '/counter_screen',
+    name: CounterScreem.routeName,
+    pageBuilder: (context, state) =>
+        MaterialPage(key: state.pageKey, child: const CounterScreem()),
+  ), 
+   GoRoute(
+    path: '/theme_changer_screen',
+    name: ThemeChangerScreen.routeName,
+    pageBuilder: (context, state) =>
+        MaterialPage(key: state.pageKey, child: const ThemeChangerScreen()),
   )
 ]);
 
