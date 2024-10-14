@@ -7,9 +7,11 @@ environment:
   sdk: ^3.5.1
 
 dependencies:
+  dio: ^5.7.0
   flutter:
     sdk: flutter
   flutter_dotenv: ^5.2.1
+  flutter_riverpod: ^2.5.3
   go_router: ^14.3.0
 
 dev_dependencies:
@@ -21,4 +23,3 @@ flutter:
   assets:
     - .env
   uses-material-design: true
-
