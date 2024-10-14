@@ -1,3 +1,4 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:widgets_app/config/theme/app_theme.dart';
 
@@ -17,3 +18,6 @@ class IsDarkMode extends _$IsDarkMode {
 
 
 final colorListProvider = Provider((ref) => colorList);
+
+
+final selectedColorProvider = StateProvider((ref) => 0);
