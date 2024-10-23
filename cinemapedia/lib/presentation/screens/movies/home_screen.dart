@@ -62,7 +62,6 @@ class _HomeViewState extends ConsumerState<_HomeView> {
             (context, index) {
               return Column(
                 children: [
-                  // const CustomAppbar(),
                   MoviesSlideshow(movies: slideshowMovies),
                   MoviesHorizontalListview(
                     movies: nowPlayingMovies,
@@ -75,7 +74,7 @@ class _HomeViewState extends ConsumerState<_HomeView> {
                   MoviesHorizontalListview(
                     movies: popularMovies,
                     title: 'Populares',
-                    // subtitle: '20, lunes',
+                    
                     loadNextPage: () =>
                         ref.read(popularMoviesProvider.notifier).loadNextPage(),
                   ),
