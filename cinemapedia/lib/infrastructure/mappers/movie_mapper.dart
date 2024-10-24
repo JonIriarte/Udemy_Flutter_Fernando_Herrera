@@ -16,9 +16,9 @@ class MovieMapper {
       popularity: movieDB.popularity,
       posterPath: movieDB.posterPath != ''
           ? 'http://image.tmdb.org/t/p/w500${movieDB.posterPath}'
-          : 'no-poster',
+          : 'https://salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png',
       releaseDate: movieDB.releaseDate,
-      title: '',
+      title: movieDB.title,
       video: movieDB.video,
       voteAverage: movieDB.voteAverage,
       voteCount: movieDB.voteCount);
@@ -36,9 +36,9 @@ class MovieMapper {
       popularity: movie.popularity,
       posterPath: movie.posterPath != ''
           ? 'http://image.tmdb.org/t/p/w500${movie.posterPath}'
-          : 'no-poster',
+          : 'https://salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled-1150x647.png',
       releaseDate: movie.releaseDate,
-      title: '',
+      title: movie.title,
       video: movie.video,
       voteAverage: movie.voteAverage,
       voteCount: movie.voteCount);
