@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:animate_do/animate_do.dart';
 import 'package:cinemapedia/config/helpers/human_formats.dart';
 import 'package:cinemapedia/domain/entities/movie.dart';
@@ -7,14 +9,59 @@ typedef SearchMoviesCallback = Future<List<Movie>> Function(String query);
 
 class SearchMovieDelegate extends SearchDelegate<Movie?> {
   final SearchMoviesCallback searchMovies;
+  List<Movie> initialMovies;
 
-  SearchMovieDelegate(
-      {super.searchFieldLabel,
-      super.searchFieldStyle,
-      super.searchFieldDecorationTheme,
-      super.keyboardType,
-      super.textInputAction,
-      required this.searchMovies});
+  StreamController<List<Movie>> debouncedMovies = StreamController.broadcast();
+  StreamController<bool> isLoadingStream = StreamController.broadcast();
+  Timer? _debounceTimer;
+
+  SearchMovieDelegate({
+    super.searchFieldLabel,
+    super.searchFieldStyle,
+    super.searchFieldDecorationTheme,
+    super.keyboardType,
+    super.textInputAction,
+    required this.searchMovies,
+    required this.initialMovies,bo
+  });
+
+  void clearStreams() {
+    debouncedMovies.close();
+    isLoadingStream.close();
+  }
+
+  void _onQueryChanged(String query) {
+    isLoadingStream.add(true);
+    if (_debounceTimer?.isActive ?? false) _debounceTimer!.cancel();
+
+    _debounceTimer = Timer(const Duration(milliseconds: 500), () async {
+      final movies = await searchMovies(query);
+      initialMovies = movies;
+
+      debouncedMovies.add(movies);
+      isLoadingStream.add(false);
+    });
+  }
+
+  Widget _buildResultsAndSuggestions() {
+    return StreamBuilder(
+        initialData: initialMovies,
+        stream: debouncedMovies.stream,
+        builder: (context, snapshot) {
+          final movies = snapshot.data ?? [];
+          return ListView.builder(
+              itemCount: movies.length,
+              itemBuilder: (context, index) {
+                return _MovieItem(
+                  movie: movies[index],
+                  onMovieSelected: (context, movie) {
+                    clearStreams();
+                    close(context, movie);
+                  },
+                );
+              });
+        });
+  }
 
   @override
   String get searchFieldLabel => 'Buscar';
@@ -22,40 +69,48 @@ class SearchMovieDelegate extends SearchDelegate<Movie?> {
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
-      FadeIn(
-          animate: query.isNotEmpty,
-          duration: const Duration(milliseconds: 200),
-          child: IconButton(
-              onPressed: () => query = '',
-              icon: const Icon(Icons.clear_rounded))),
+      StreamBuilder(
+          initialData: false,
+          stream: isLoadingStream.stream,
+          builder: (context, snapshot) {
+            if (snapshot.data ?? false) {
+              return SpinPerfect(
+                  duration: const Duration(seconds: 1),
+                  spins: 10,
+                  infinite: true,
+                  child: IconButton(
+                      onPressed: () => query = '',
+                      icon: const Icon(Icons.refresh_rounded)));
+            }
+            return FadeIn(
+                animate: query.isNotEmpty,
+                duration: const Duration(milliseconds: 200),
+                child: IconButton(
+                    onPressed: () => query = '',
+                    icon: const Icon(Icons.clear_rounded)));
+          }),
     ];
   }
 
   @override
   Widget? buildLeading(BuildContext context) {
     return IconButton(
-        onPressed: () => close(context, null),
+        onPressed: () {
+          clearStreams();
+          close(context, null);
+        },
         icon: const Icon(Icons.arrow_back_ios_new_rounded));
   }
 
   @override
   Widget buildResults(BuildContext context) {
-    return const Text('Build Results');
+    return _buildResultsAndSuggestions();
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    return FutureBuilder(
-        initialData: const [],
-        future: searchMovies(query),
-        builder: (context, snapshot) {
-          final movies = snapshot.data ?? [];
-          return ListView.builder(
-              itemCount: movies.length,
-              itemBuilder: (context, index) {
-                return _MovieItem(movie: movies[index], onMovieSelected: close,);
-              });
-        });
+    _onQueryChanged(query);
+    return _buildResultsAndSuggestions();
   }
 }
 
@@ -70,10 +125,7 @@ class _MovieItem extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return GestureDetector(
-      onTap: ()=>{
-        onMovieSelected(context, movie)
-
-      },
+      onTap: () => {onMovieSelected(context, movie)},
       child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           child: Row(
