@@ -104,3 +104,11 @@
 
 # Videos
 **/*.mp4
+*.xcconfig
+*.xcconfig
+/cinemapedia/ios
+*.xcconfig
+/cinemapedia/macos
+*.cc
+*.swift
+/cinemapedia/macos
