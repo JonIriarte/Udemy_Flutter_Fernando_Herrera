@@ -24,91 +24,86 @@
 #.vscode/
 
 # Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
-**/.dart_tool/
-**/.flutter-plugins
-**/.flutter-plugins-dependencies
-**/.pub-cache/
-**/.pub/
-**/build/
+**/*/doc/api/
+**/*/ios/Flutter/.last_build_id
+**/*/.dart_tool/
+**/*/.flutter-plugins
+**/*/.flutter-plugins-dependencies
+**/*/.pub-cache/
+**/*/.pub/
+**/*/build/
 
 # Symbolication related
-**/app.*.symbols
+**/*/app.*.symbols
 
 # Obfuscation related
-**/app.*.map.json
+**/*/app.*.map.json
 
 # Android Studio will place build artifacts here
-**/android/app/debug/
-**/android/app/profile/
-**/android/app/release/
+**/*/android/app/debug/
+**/*/android/app/profile/
+**/*/android/app/release/
 
 # Flutter-specific
-**/.idea/
-**/.macos/
-**/generated_plugin_registrant.dart
+**/*/.idea/
+**/*/.macos/
+**/*/generated_plugin_registrant.dart
 
 # iOS-specific
-**/ios/Pods/
-**/ios/.symlinks/
-**/ios/Flutter/Flutter.framework
-**/ios/Flutter/Flutter.podspec
-**/ios/Flutter/Generated.xcconfig
-**/ios/Flutter/App.framework
-**/ios/Flutter/Flutter.podspec.lock
-**/ios/Flutter/Flutter.podfile.lock
+**/*/ios/Pods/
+**/*/ios/.symlinks/
+**/*/ios/Flutter/Flutter.framework
+**/*/ios/Flutter/Flutter.podspec
+**/*/ios/Flutter/Generated.xcconfig
+**/*/ios/Flutter/App.framework
+**/*/ios/Flutter/Flutter.podspec.lock
+**/*/ios/Flutter/Flutter.podfile.lock
 
 # Xcode
-**/ios/Runner.xcworkspace/
-**/ios/Runner.xcodeproj/project.xcworkspace/
-**/ios/Runner.xcodeproj/xcuserdata/
-**/ios/Flutter/Debug.xcconfig
-**/ios/Flutter/Release.xcconfig
-**/xcuserdata/
-**/DerivedData/
-**/*.pbxuser
-!**/default.pbxuser
-**/*.mode1v3
-!**/default.mode1v3
-**/*.mode2v3
-!**/default.mode2v3
-**/*.perspectivev3
-!**/default.perspectivev3
+**/*/ios/Runner.xcworkspace/
+**/*/ios/Runner.xcodeproj/project.xcworkspace/
+**/*/ios/Runner.xcodeproj/xcuserdata/
+**/*/ios/Flutter/Debug.xcconfig
+**/*/ios/Flutter/Release.xcconfig
+**/*/xcuserdata/
+**/*/DerivedData/
+**/*/*.pbxuser
+!**/*/default.pbxuser
+**/*/*.mode1v3
+!**/*/default.mode1v3
+**/*/*.mode2v3
+!**/*/default.mode2v3
+**/*/*.perspectivev3
+!**/*/default.perspectivev3
 
 # macOS-specific (if you have macOS target in your Flutter app)
-**/macos/Pods/
-**/macos/.symlinks/
-**/macos/Flutter/Flutter.podspec
-**/macos/Flutter/Flutter.framework
-**/macos/Flutter/GeneratedPluginRegistrant.swift
-**/macos/Flutter/Generated.xcconfig
-**/macos/Flutter/App.framework
-**/macos/Flutter/Flutter.podspec.lock
-**/macos/Flutter/Flutter.podfile.lock
-**/macos/Runner.xcworkspace/
-**/macos/Runner.xcodeproj/project.xcworkspace/
-**/macos/Flutter/Debug.xcconfig
-**/macos/Flutter/Release.xcconfig
+**/*/macos/Pods/
+**/*/macos/.symlinks/
+**/*/macos/Flutter/Flutter.podspec
+**/*/macos/Flutter/Flutter.framework
+**/*/*/macos/Flutter/GeneratedPluginRegistrant.swift
+**/*/macos/Flutter/Generated.xcconfig
+**/*/macos/Flutter/App.framework
+**/*/macos/Flutter/Flutter.podspec.lock
+**/*/macos/Flutter/Flutter.podfile.lock
+**/*/macos/Runner.xcworkspace/
+**/*/macos/Runner.xcodeproj/project.xcworkspace/
+**/*/macos/Flutter/Debug.xcconfig
+**/*/macos/Flutter/Release.xcconfig
 
 # macOS Finder/Spotlight files
-**/.DS_Store
-**/.AppleDouble
-**/.LSOverride
-**/Icon?
-**/._*
+**/*/.DS_Store
+**/*/.AppleDouble
+**/*/.LSOverride
+**/*/Icon?
+**/*/._*
 
 # Additional macOS system files
-**/.Spotlight-V100
-**/.Trashes
+**/*/.Spotlight-V100
+**/*/.Trashes
 
 # Videos
-**/*.mp4
-*.xcconfig
-*.xcconfig
-/cinemapedia/ios
-*.xcconfig
-/cinemapedia/macos
-*.cc
-*.swift
-/cinemapedia/macos
+**/*/*.mp4
+**/*/*.xcconfig
+
+
