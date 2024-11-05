@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key, required this.navigationShell});
 
-  static const String routeName = '/home_screen';
+  static const String routeName = '/';
 
   final StatefulNavigationShell navigationShell;
 
