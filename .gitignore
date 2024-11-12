@@ -74,6 +74,7 @@
 # macOS-specific (if you have macOS target in your Flutter app)
 **/*/macos/Pods/
 **/*/macos/.symlinks/
+**/*/macos/Runner/
 **/*/macos/Flutter/Flutter.podspec
 **/*/macos/Flutter/Flutter.framework
 **/*/*/macos/Flutter/GeneratedPluginRegistrant.swift
