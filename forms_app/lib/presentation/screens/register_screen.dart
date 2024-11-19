@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:forms_app/presentation/blocs/register_cubit/register_cubit.dart';
+// import 'package:forms_app/presentation/screens/bloc_counter_screen.dart';
 import 'package:forms_app/presentation/widgets/widgets.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -10,7 +13,8 @@ class RegisterScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Nuevo usuario'),
       ),
-      body: const _RegisterView(),
+      body: BlocProvider(
+          create: (context) => RegisterCubit(), child: const _RegisterView()),
     );
   }
 }
@@ -48,19 +52,16 @@ class _RegisterForm extends StatefulWidget {
 class _RegisterFormState extends State<_RegisterForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  String username = '';
-  String email = '';
-  String password = '';
-
   @override
   Widget build(BuildContext context) {
+    final registerCubit = context.watch<RegisterCubit>();
     return Form(
       key: _formKey,
       child: Column(
         children: [
           CustomTextFormField(
             label: 'Nombre de usuario',
-            onChanged: (value) => username = value,
+            onChanged: (value) => registerCubit.usernameChanged(value),
             validator: (value) {
               if (value == null || value.isEmpty) return 'Campo obligatorio';
               if (value.trim().isEmpty) return 'Campo obligatorio';
@@ -73,7 +74,7 @@ class _RegisterFormState extends State<_RegisterForm> {
           ),
           CustomTextFormField(
             label: 'Correo electrónico',
-            onChanged: (value) => email = value,
+            onChanged: (value) => registerCubit.emailChanged(value),
             validator: (value) {
               if (value == null || value.isEmpty) return 'Campo obligatorio';
               if (value.trim().isEmpty) return 'Campo obligatorio';
@@ -93,7 +94,7 @@ class _RegisterFormState extends State<_RegisterForm> {
           CustomTextFormField(
               label: 'Contraseña',
               obscureText: true,
-              onChanged: (value) => password = value,
+              onChanged: (value) => registerCubit.passwordChanged(value),
               validator: (value) {
                 if (value == null || value.isEmpty) return 'Campo obligatorio';
                 if (value.trim().isEmpty) return 'Campo obligatorio';
@@ -107,7 +108,7 @@ class _RegisterFormState extends State<_RegisterForm> {
               onPressed: () {
                 // final isValid = _formKey.currentState?.validate();
                 if (_formKey.currentState?.validate() == true) {
-                  print('$username, $email, $password');
+                  registerCubit.onSubmit();
                 }
               },
               icon: const Icon(Icons.save),
