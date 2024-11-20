@@ -35,6 +35,7 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.1.6
   flutter_bloc_cli: ^1.0.4
+  formz: ^0.8.0
   go_router: ^14.4.1
 
 dev_dependencies:
